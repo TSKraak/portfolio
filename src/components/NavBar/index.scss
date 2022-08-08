@@ -1,0 +1,32 @@
+.NavBar {
+  width: 100%;
+  text-align: center;
+  position: sticky;
+  top: 0px;
+  background-color: var(--accent-color);
+  color: white;
+  z-index: 100;
+
+  .NBTitle {
+    h1 {
+      margin: 0;
+      padding: 10px 0px 10px 0px;
+    }
+  }
+
+  .NBMenu {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 0px 10px 0px;
+    border-bottom: solid black 1px;
+    .NavLink {
+      text-decoration: none;
+      color: white;
+      font-size: 120%;
+    }
+    .NavLink:hover {
+      text-decoration: underline;
+      color: white;
+    }
+  }
+}
