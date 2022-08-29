@@ -1,5 +1,5 @@
 import gemeenteamsterdam from "../../data/images/gemeente-amsterdam.png";
-import deltalloyd from "../../data/images/deltalloyd.jpeg";
+import deltalloyd from "../../data/images/deltalloyd.png";
 import sineth from "../../data/images/sineth.svg";
 import AVB from "../../data/images/AVB.jpeg";
 import codaisseur from "../../data/images/codaisseur.svg";
