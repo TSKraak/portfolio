@@ -7,12 +7,16 @@ export default function NavBar() {
     <div className="NavBar">
       <div className="NBTitle">
         <h1>Thomas Kraak - Full-stack developer</h1>
-
-        <div className="NBMenu">
-          <NavbarItem path="/" linkText="CV" />
-          <NavbarItem path="/travel" linkText="Travel" />
-          <NavbarItem path="/hobbies" linkText="Hobbies" />
+      </div>
+      <div className="NBMenu">
+        <div className="NBMenuItems">
+          <NavbarItem path="/" linkText="Portfolio" />
+          {/* <NavbarItem path="/travel" linkText="Travel" /> */}
+          {/* <NavbarItem path="/hobbies" linkText="Hobbies" /> */}
           <NavbarItem path="/contact" linkText="Contact" />
+        </div>
+        <div className="NBAdmin">
+          <NavbarItem path="/admin" linkText="Admin" />
         </div>
       </div>
     </div>

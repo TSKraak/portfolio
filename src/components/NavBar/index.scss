@@ -1,32 +1,61 @@
 .NavBar {
+  height: 5.6rem;
   width: 100%;
   text-align: center;
   position: sticky;
   top: 0px;
   background-color: var(--accent-color);
-  color: white;
   z-index: 100;
+  border-bottom: solid black 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  .NBTitle {
-    h1 {
-      margin: 0;
-      padding: 10px 0px 10px 0px;
-    }
+  .NBTitle h1 {
+    color: #f2f2f2;
+    font-weight: 600;
+    text-shadow: 3px 3px 10px black;
+    margin: 0;
+    padding: 0.6rem 0;
   }
 
   .NBMenu {
     display: flex;
+    padding-bottom: 0.6rem;
     justify-content: space-evenly;
-    padding: 0px 0px 10px 0px;
-    border-bottom: solid black 1px;
+    align-items: center;
+
     .NavLink {
+      font-size: 1.3rem;
       text-decoration: none;
-      color: white;
-      font-size: 120%;
+      color: #f2f2f2;
+      margin: 0 2rem;
     }
+
     .NavLink:hover {
       text-decoration: underline;
-      color: white;
+      color: #f2f2f2;
+    }
+
+    .NBAdmin {
+      position: absolute;
+      right: 0.3rem;
+
+      .NavLink {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: black;
+        margin: 0;
+        border: solid 1px black;
+        border-radius: 0.3rem;
+        padding: 0.3rem;
+        background-color: rgb(170, 170, 170);
+      }
+
+      .NavLink:hover {
+        background-color: rgb(150, 150, 150);
+      }
     }
   }
 }

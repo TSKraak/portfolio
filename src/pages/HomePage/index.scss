@@ -2,13 +2,14 @@
   background-image: url(../../data/images/coding.jpg);
   background-attachment: fixed;
   background-size: cover;
-  padding: 3% 10% 3% 10%;
+  padding: 2.5rem 8.5rem 2.5rem 8.5rem;
 
   .AboutContainer {
     width: 100%;
     display: flex;
-    margin-bottom: 3%;
-    padding: 1% 1% 1% 1%;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0.8rem;
     background-color: white;
     border: solid black 1px;
     box-shadow: 10px 10px 5px var(--accent-color);
@@ -18,12 +19,17 @@
       width: 75%;
       display: flex;
       flex-direction: column;
+      align-self: flex-start;
+
       h1 {
         margin: 0;
-        padding-bottom: 1%;
+        margin-bottom: 1rem;
       }
+
       p {
-        margin-bottom: 1.5%;
+        margin: 0;
+        margin-bottom: 1rem;
+        line-height: 1.3rem;
       }
     }
 
@@ -31,19 +37,22 @@
       align-items: center;
       width: 25%;
       height: 25%;
-      border-radius: 50%;
       overflow: hidden;
-      margin-left: 1%;
+      margin-left: 0.5rem;
       display: flex;
       justify-content: center;
+      border-radius: 50%;
+      box-shadow: 5px 5px 10px var(--accent-color);
+
       img {
         width: 100%;
         object-fit: cover;
         transition: 2s;
       }
     }
+
     .AboutImageContainer:hover img {
-      transform: scale(1.25);
+      transform: scale(1.05);
     }
   }
 
@@ -55,68 +64,81 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3%;
-    padding: 1% 1% 1% 1%;
+    margin-bottom: 2rem;
+    padding: 0.8rem;
     background-color: white;
     border: solid black 1px;
     box-shadow: 10px 10px 5px var(--accent-color);
     transition: box-shadow 0.5s;
+
+    p {
+      margin: 0;
+      margin-bottom: 1rem;
+      line-height: 1.3rem;
+    }
+
     h1 {
       margin: 0;
     }
+
     h2 {
+      font-weight: 600;
       margin: 0;
-      padding-bottom: 1%;
+      margin-bottom: 1rem;
     }
+
     h3 {
+      font-weight: 600;
       margin: 0;
-      padding-bottom: 2%;
+      margin-bottom: 1rem;
     }
 
     .AlignImageLeft {
       display: flex;
       flex-direction: row;
-      padding: 1% 0% 1% 0%;
+      padding: 0.8rem 0;
       border-top: solid gray 1px;
 
       .TextContainer {
         display: flex;
         flex-direction: column;
         width: 60%;
-        margin-right: 1%;
+        margin-right: 2rem;
       }
     }
 
     .AlignImageRight {
       display: flex;
       flex-direction: row-reverse;
-      padding: 1% 0% 1% 0%;
+      padding: 0.8rem 0;
       border-top: solid gray 1px;
 
       .TextContainer {
         display: flex;
         flex-direction: column;
         width: 60%;
-        margin-left: 1%;
+        margin-left: 2rem;
       }
     }
 
     .ImageContainer {
       align-items: center;
       width: 40%;
-      overflow: hidden;
       display: flex;
       justify-content: center;
-      box-shadow: 0px 0px 5px var(--accent-color);
-      border-radius: 10px;
+
       img {
-        width: 100%;
+        min-width: 100%;
         object-fit: cover;
         transition: 2s;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px var(--accent-color);
+        border-radius: 0.8rem;
       }
     }
+
     .ImageContainer:hover img {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
   }
 
@@ -124,15 +146,16 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3%;
-    padding: 1% 1% 1% 1%;
+    margin-bottom: 2rem;
+    padding: 0.8rem;
     background-color: white;
     border: solid black 1px;
     box-shadow: 10px 10px 5px var(--accent-color);
     transition: box-shadow 0.5s;
+
     h1 {
       margin: 0;
-      padding-bottom: 1%;
+      padding-bottom: 0.5rem;
     }
   }
 
@@ -140,37 +163,45 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 1% 1% 1% 1%;
+    padding: 0.8rem;
     background-color: white;
     border: solid black 1px;
     box-shadow: 10px 10px 5px var(--accent-color);
     transition: box-shadow 0.5s;
+
     h1 {
       margin: 0;
-      padding-bottom: 1%;
+      padding-bottom: 0.5rem;
     }
+
     .ExpData {
       border-top: solid gray 1px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+
       span {
         display: flex;
         flex-direction: column;
+
         .ExpTitle {
-          font-weight: 900;
-          color: black;
+          margin-bottom: 0;
         }
+
         .ExpPeriod {
           color: grey;
+          // margin-bottom: 2rem;
         }
+
         .ExpDescription {
-          font-size: 90%;
+          font-size: 0.9rem;
         }
       }
+
       .ExpLogo {
-        margin: 1% 1% 1% 1%;
-        height: 5vh;
+        margin-top: 1.2rem;
+        margin-right: 0.5rem;
+        height: 2rem;
       }
     }
   }

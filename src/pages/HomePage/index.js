@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
-import { projects, experience } from "../../data/content/ContentData";
+// import { projects, experience } from "../../data/content/ContentData";
 import portrait from "../../data/images/portrait.jpeg";
 import github from "../../data/images/github.png";
+import { apiUrl } from "../../config/constants";
+import axios from "axios";
 
 export default function HomePage() {
+  const [experiences, setExperiences] = useState([]);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const expResponse = await axios.get(`${apiUrl}/experience`);
+        const projResponse = await axios.get(`${apiUrl}/project`);
+
+        setExperiences(expResponse.data);
+        setProjects(projResponse.data);
+      } catch (error) {
+        console.log("Something went wrong:", error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="HomePageContainer">
       <div className="AboutContainer">
@@ -38,16 +58,16 @@ export default function HomePage() {
       <div className="ProjectsContainer">
         <h1>Projects</h1>
         <p>
-          You can find my GitHub{" "}
+          Find my GitHub{" "}
           <a href="https://github.com/TSKraak">
             here <img src={github} alt="github" style={{ height: "3vh" }} />
           </a>
         </p>
-        {projects.map((proj) => {
+        {projects.map((proj, i) => {
           return (
             <div
               className={
-                proj.align === "left" ? "AlignImageLeft" : "AlignImageRight"
+                i === 0 || i % 2 === 0 ? "AlignImageLeft" : "AlignImageRight"
               }
               key={proj.project}
             >
@@ -57,7 +77,7 @@ export default function HomePage() {
                 <p>{proj.description}</p>
                 {proj.url ? (
                   <p>
-                    Click <a href={proj.url}>here</a> to see the live website
+                    <a href={proj.url}>Click here to see the live website</a>
                   </p>
                 ) : null}
               </div>
@@ -77,7 +97,7 @@ export default function HomePage() {
       </div>
       <div className="ExperienceContainer">
         <h1>Experience</h1>
-        {experience.map((exp) => {
+        {experiences.map((exp) => {
           return (
             <div className="ExpData" key={exp.company}>
               <span>
