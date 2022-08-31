@@ -25,7 +25,7 @@ export default function HomePage({
       }
     }
     fetchData();
-  }, []);
+  });
 
   return (
     <div className="HomePageContainer">
