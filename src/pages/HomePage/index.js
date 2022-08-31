@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 // import { projects, experience } from "../../data/content/ContentData";
 import portrait from "../../data/images/portrait.jpeg";
@@ -6,10 +6,12 @@ import github from "../../data/images/github.png";
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
 
-export default function HomePage() {
-  const [experiences, setExperiences] = useState([]);
-  const [projects, setProjects] = useState([]);
-
+export default function HomePage({
+  experiences,
+  setExperiences,
+  projects,
+  setProjects,
+}) {
   useEffect(() => {
     async function fetchData() {
       try {
