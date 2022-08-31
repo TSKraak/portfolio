@@ -2,7 +2,12 @@ import React from "react";
 import NavbarItem from "./NavbarItem";
 import "./index.scss";
 
-export default function NavBar() {
+export default function NavBar({ user, setUser }) {
+  const handleLogout = () => {
+    setUser({ username: "", password: "", token: "" });
+    localStorage.clear();
+  };
+
   return (
     <div className="NavBar">
       <div className="NBTitle">
@@ -17,6 +22,7 @@ export default function NavBar() {
         </div>
         <div className="NBAdmin">
           <NavbarItem path="/admin" linkText="Admin" />
+          {user.token ? <button onClick={handleLogout}>Logout</button> : null}
         </div>
       </div>
     </div>

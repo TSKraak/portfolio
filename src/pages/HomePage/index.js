@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./index.scss";
-// import { projects, experience } from "../../data/content/ContentData";
 import portrait from "../../data/images/portrait.jpeg";
 import github from "../../data/images/github.png";
 import { apiUrl } from "../../config/constants";
@@ -13,7 +12,7 @@ export default function HomePage({
   setProjects,
 }) {
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       try {
         const expResponse = await axios.get(`${apiUrl}/experience`);
         const projResponse = await axios.get(`${apiUrl}/project`);
@@ -23,7 +22,7 @@ export default function HomePage({
       } catch (error) {
         console.log("Something went wrong:", error);
       }
-    }
+    };
     fetchData();
   });
 
