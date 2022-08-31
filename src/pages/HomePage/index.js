@@ -93,9 +93,9 @@ export default function HomePage({
           );
         })}
       </div>
-      <div className="SkillsContainer">
+      {/* <div className="SkillsContainer">
         <h1>Skills</h1>
-      </div>
+      </div> */}
       <div className="ExperienceContainer">
         <h1>Experience</h1>
         {experiences.map((exp) => {

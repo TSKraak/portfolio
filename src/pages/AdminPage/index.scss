@@ -1,0 +1,30 @@
+.loginForm {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+
+  .usernameField,
+  .passwordField {
+    background-color: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+    input {
+      align-self: flex-end;
+    }
+  }
+
+  button {
+    width: 4rem;
+    align-self: flex-end;
+  }
+}
+
+.addButtons {
+  margin-bottom: 1rem;
+
+  .addProjectButton {
+    margin-right: 2rem;
+  }
+}
