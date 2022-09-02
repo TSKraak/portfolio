@@ -1,0 +1,36 @@
+.AboutContainer {
+  display: flex;
+
+  .AboutTextContainer {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+
+    p {
+      padding-top: 0.5rem;
+    }
+  }
+
+  .AboutImageContainer {
+    align-items: center;
+    width: 25%;
+    height: 25%;
+    overflow: hidden;
+    margin-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px var(--accent-color);
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: 2s;
+    }
+  }
+
+  .AboutImageContainer:hover img {
+    transform: scale(1.05);
+  }
+}

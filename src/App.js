@@ -12,6 +12,7 @@ function App() {
   const [user, setUser] = useState({ username: "", password: "", token: "" });
   const [experiences, setExperiences] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [about, setAbout] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -53,6 +54,8 @@ function App() {
             path="/"
             element={
               <HomePage
+                about={about}
+                setAbout={setAbout}
                 experiences={experiences}
                 setExperiences={setExperiences}
                 projects={projects}

@@ -11,7 +11,8 @@ export default function NavBar({ user, setUser }) {
   return (
     <div className="NavBar">
       <div className="NBTitle">
-        <h1>Thomas Kraak - Full-stack developer</h1>
+        <h1>Thomas Kraak</h1>
+        <h3>Full-stack developer</h3>
       </div>
       <div className="NBMenu">
         <div className="NBMenuItems">
@@ -20,10 +21,10 @@ export default function NavBar({ user, setUser }) {
           {/* <NavbarItem path="/hobbies" linkText="Hobbies" /> */}
           <NavbarItem path="/contact" linkText="Contact" />
         </div>
-        <div className="NBAdmin">
-          <NavbarItem path="/admin" linkText="Admin" />
-          {user.token ? <button onClick={handleLogout}>Logout</button> : null}
-        </div>
+      </div>
+      <div className="NBAdmin">
+        <NavbarItem path="/admin" linkText="Admin" />
+        {user.token ? <button onClick={handleLogout}>Logout</button> : null}
       </div>
     </div>
   );

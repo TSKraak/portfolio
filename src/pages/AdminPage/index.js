@@ -34,7 +34,7 @@ export default function AdminPage({ user, setUser }) {
           <h1>Login</h1>
           <form className="loginForm">
             <label className="usernameField">
-              Username:
+              <span>Username:</span>
               <input
                 type="text"
                 value={user.username}
@@ -44,7 +44,7 @@ export default function AdminPage({ user, setUser }) {
               />
             </label>
             <label className="passwordField">
-              Password:
+              <span>Password:</span>
               <input
                 type="password"
                 value={user.password}
