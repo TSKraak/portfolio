@@ -9,28 +9,32 @@
   box-shadow: 10px 10px 5px var(--accent-color);
   transition: box-shadow 0.5s;
 
+  .CardTitle {
+    display: flex;
+    justify-content: space-between;
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
   h1 {
-    margin: 0;
+    margin-top: 0;
   }
 
   h2 {
     color: var(--accent-color2);
-
     font-weight: 600;
-    margin: 0;
-    margin-bottom: 1rem;
+    margin-top: 0;
   }
 
   h3 {
-    // color: var(--accent-color2);
     font-weight: 600;
-    margin: 0;
-    margin-bottom: 1rem;
+    margin-top: 0;
   }
 
   p {
-    margin: 0;
-    margin-bottom: 1rem;
+    margin-top: 0;
     line-height: 1.3rem;
   }
 }

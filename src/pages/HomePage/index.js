@@ -31,6 +31,8 @@ export default function HomePage({
 
   return (
     <div className="HomePageContainer">
+      <div className="homeBackground"></div>
+      <div className="homeBackdrop"></div>
       <Card type="About me" data={about} />
       <Card type="Projects" data={projects} />
       {/* <div className="SkillsContainer">

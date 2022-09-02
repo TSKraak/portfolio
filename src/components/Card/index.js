@@ -1,25 +1,31 @@
 import React from "react";
 import github from "../../data/images/github.png";
 import AboutMe from "../AboutMe";
+import Admin from "../Admin";
+import Contact from "../Contact";
 import Experiences from "../Experiences";
 import Projects from "../Projects";
 import "./index.scss";
 
-export default function Card({ type, data }) {
+export default function Card({ type, data, user, setUser }) {
   return (
     <div className={"CardContainer"}>
-      <h1>{type}</h1>
-      {type === "Projects" && (
-        <p>
-          Find my GitHub{" "}
-          <a href="https://github.com/TSKraak">
-            here <img src={github} alt="github" style={{ height: "3vh" }} />
-          </a>
-        </p>
-      )}
+      <div className="CardTitle">
+        <h1>{type}</h1>
+        {type === "Projects" && (
+          <p>
+            Find my GitHub{" "}
+            <a href="https://github.com/TSKraak">
+              here <img src={github} alt="github" style={{ height: "3vh" }} />
+            </a>
+          </p>
+        )}
+      </div>
       {type === "About me" && <AboutMe data={data} />}
       {type === "Projects" && <Projects data={data} />}
       {type === "Experiences" && <Experiences data={data} />}
+      {type === "Contact" && <Contact />}
+      {type === "Login" && <Admin user={user} setUser={setUser} />}
     </div>
   );
 }
