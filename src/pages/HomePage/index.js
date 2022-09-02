@@ -35,13 +35,9 @@ export default function HomePage({
       <div className="homeBackdrop"></div>
       <Card type="About me" data={about} />
       <Card type="Projects" data={projects} />
-      {/* <div className="SkillsContainer">
-        <h1>Skills</h1>
-      </div> */}
-      {/* <div className="EducationContainer">
-        <h1>Education</h1>
-      </div> */}
+      <Card type="Skills" />
       <Card type="Experiences" data={experiences} />
+      <Card type="Education" />
     </div>
   );
 }

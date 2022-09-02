@@ -3,8 +3,10 @@ import github from "../../data/images/github.png";
 import AboutMe from "../AboutMe";
 import Admin from "../Admin";
 import Contact from "../Contact";
+import Education from "../Education";
 import Experiences from "../Experiences";
 import Projects from "../Projects";
+import Skills from "../Skills";
 import "./index.scss";
 
 export default function Card({ type, data, user, setUser }) {
@@ -23,7 +25,9 @@ export default function Card({ type, data, user, setUser }) {
       </div>
       {type === "About me" && <AboutMe data={data} />}
       {type === "Projects" && <Projects data={data} />}
+      {type === "Skills" && <Skills />}
       {type === "Experiences" && <Experiences data={data} />}
+      {type === "Education" && <Education />}
       {type === "Contact" && <Contact />}
       {type === "Login" && <Admin user={user} setUser={setUser} />}
     </div>
