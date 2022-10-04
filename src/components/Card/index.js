@@ -9,7 +9,14 @@ import Projects from "../Projects";
 import Skills from "../Skills";
 import "./index.scss";
 
-export default function Card({ type, data, user, setUser }) {
+export default function Card({
+  type,
+  data,
+  user,
+  setUser,
+  validToken,
+  setValidToken,
+}) {
   return (
     <div className={"CardContainer"}>
       <div className="CardTitle">
@@ -29,7 +36,14 @@ export default function Card({ type, data, user, setUser }) {
       {type === "Experiences" && <Experiences data={data} />}
       {type === "Education" && <Education />}
       {type === "Contact" && <Contact />}
-      {type === "Login" && <Admin user={user} setUser={setUser} />}
+      {type === "Login" && (
+        <Admin
+          user={user}
+          setUser={setUser}
+          validToken={validToken}
+          setValidToken={setValidToken}
+        />
+      )}
     </div>
   );
 }

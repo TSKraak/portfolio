@@ -2,9 +2,10 @@ import React from "react";
 import NavbarItem from "./NavbarItem";
 import "./index.scss";
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser, validToken, setValidToken }) {
   const handleLogout = () => {
     setUser({ username: "", password: "", token: "" });
+    setValidToken(false);
     localStorage.clear();
   };
 

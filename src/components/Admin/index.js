@@ -1,12 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddProjectForm from "../../components/AddProjectForm";
 import AddExperienceForm from "../../components/AddExperienceForm";
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
 import "./index.scss";
 
-export default function Admin({ user, setUser }) {
+export default function Admin({ user, setUser, validToken, setValidToken }) {
   const [addData, setaddData] = useState();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    const checkToken = async () => {
+      if (token) {
+        try {
+          const response = await axios.get(`${apiUrl}/me`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          setUser({ token, ...response.data });
+          setValidToken(true);
+        } catch (error) {
+          if (error.response) {
+            console.log("ERROR:", error.response.message);
+          } else {
+            console.log("ERROR:", error);
+          }
+          // if we get a 4xx or 5xx response,
+          // get rid of the token by logging out
+          setUser({ username: "", password: "", token: "" });
+          localStorage.clear();
+        }
+      }
+    };
+
+    checkToken();
+  }, [setUser, setValidToken]);
 
   const submitForm = async (event) => {
     event.preventDefault();
@@ -17,6 +45,7 @@ export default function Admin({ user, setUser }) {
         password: user.password,
       });
       setUser(response.data);
+      setValidToken(true);
       localStorage.setItem("token", response.data.token);
     } catch (error) {
       if (error.response) {
@@ -29,7 +58,7 @@ export default function Admin({ user, setUser }) {
 
   return (
     <div>
-      {!user.token ? (
+      {!user.token || !validToken ? (
         <div>
           <form className="loginForm">
             <label className="usernameField">

@@ -13,6 +13,7 @@ function App() {
   const [experiences, setExperiences] = useState([]);
   const [projects, setProjects] = useState([]);
   const [about, setAbout] = useState([]);
+  const [validToken, setValidToken] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -41,12 +42,18 @@ function App() {
         }
       }
     };
+
     fetchUserWithToken();
   }, []);
 
   return (
     <div className="App">
-      <NavBar user={user} setUser={setUser} />
+      <NavBar
+        user={user}
+        setUser={setUser}
+        validToken={validToken}
+        setValidToken={setValidToken}
+      />
       <div className="App-Content">
         <Routes>
           <Route
@@ -67,7 +74,14 @@ function App() {
           <Route
             exact
             path="/admin"
-            element={<AdminPage user={user} setUser={setUser} />}
+            element={
+              <AdminPage
+                user={user}
+                setUser={setUser}
+                validToken={validToken}
+                setValidToken={setValidToken}
+              />
+            }
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
