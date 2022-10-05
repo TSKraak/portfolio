@@ -36,7 +36,7 @@ export default function Card({
       {type === "Experiences" && <Experiences data={data} />}
       {type === "Education" && <Education />}
       {type === "Contact" && <Contact />}
-      {type === "Login" && (
+      {type === "Admin" && (
         <Admin
           user={user}
           setUser={setUser}

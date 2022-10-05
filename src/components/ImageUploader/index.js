@@ -1,14 +1,14 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 
 export default function ImageUploader({ uploadPreset, uploadImageUrl }) {
-  const myCropWidget = async () => {
+  const myCropWidget = () => {
     // eslint-disable-next-line no-undef
     const uploadWidget = cloudinary.createUploadWidget(
       {
         cloudName: "leaves-client",
         uploadPreset: uploadPreset,
-        cropping: true,
+        folder: uploadPreset,
+        cropping: false,
       },
 
       (error, result) => {
@@ -22,9 +22,7 @@ export default function ImageUploader({ uploadPreset, uploadImageUrl }) {
 
   return (
     <div>
-      <Button variant="success" onClick={myCropWidget}>
-        Upload picture
-      </Button>
+      <button onClick={myCropWidget}>Upload picture</button>
     </div>
   );
 }

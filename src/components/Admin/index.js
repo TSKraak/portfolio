@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import AddProjectForm from "../../components/AddProjectForm";
-import AddExperienceForm from "../../components/AddExperienceForm";
+import ProjectForm from "../ProjectForm";
+import ExperienceForm from "../ExperienceForm";
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
 import "./index.scss";
@@ -102,8 +102,8 @@ export default function Admin({ user, setUser, validToken, setValidToken }) {
           </button>
         </div>
       )}
-      {addData === "project" && <AddProjectForm />}
-      {addData === "experience" && <AddExperienceForm />}
+      {addData === "project" && <ProjectForm />}
+      {addData === "experience" && <ExperienceForm />}
     </div>
   );
 }

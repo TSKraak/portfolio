@@ -13,7 +13,7 @@ export default function AdminPage({
       <div className="adminBackground"></div>
       <div className="adminBackdrop"></div>
       <Card
-        type="Login"
+        type="Admin"
         user={user}
         setUser={setUser}
         validToken={validToken}

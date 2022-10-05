@@ -23,7 +23,7 @@ export default function AboutMe({ data }) {
               <p>
                 My name is Thomas Kraak, living in Amsterdam and{" "}
                 {getAge("11-04-1987")} years of age. I live together in an
-                apartment with my girlfriend Stephanie and cat Grover.
+                apartment with cat Grover.
               </p>
               <p>{parse(dat.about)}</p>
             </div>
