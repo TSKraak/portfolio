@@ -4,7 +4,7 @@ import "./index.scss";
 export default function Experiences({ data }) {
   return (
     <div className="ExperienceContainer">
-      {data.map((dat) => {
+      {[...data].reverse().map((dat) => {
         return (
           <div className="ExpData" key={dat.company}>
             <div className="ExpText">
@@ -15,7 +15,9 @@ export default function Experiences({ data }) {
               </div>
               <p className="ExpDescription">{dat.description}</p>
             </div>
-            <img className="ExpLogo" src={dat.logo} alt={dat.company} />
+            {dat.logo && (
+              <img className="ExpLogo" src={dat.logo} alt={dat.company} />
+            )}
           </div>
         );
       })}

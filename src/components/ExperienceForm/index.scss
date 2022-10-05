@@ -1,4 +1,25 @@
 .ExperienceForm {
   display: flex;
   flex-direction: column;
+
+  .FieldContainer {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    label {
+      width: 15%;
+    }
+    input {
+      width: 80%;
+      height: 2rem;
+    }
+    textarea {
+      resize: vertical;
+      width: 80%;
+    }
+  }
+}
+
+.SubmitExpButton {
+  margin-left: 15%;
 }

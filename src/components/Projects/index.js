@@ -4,7 +4,7 @@ import "./index.scss";
 export default function Projects({ data }) {
   return (
     <div className="ProjectsContainer">
-      {data.map((dat, i) => {
+      {[...data].reverse().map((dat, i) => {
         return (
           <div
             className={
@@ -24,7 +24,13 @@ export default function Projects({ data }) {
               )}
             </div>
             <div className="ImageContainer">
-              <img className="ProjectImage" src={dat.image} alt={dat.company} />
+              {dat.image && (
+                <img
+                  className="ProjectImage"
+                  src={dat.image}
+                  alt={dat.company}
+                />
+              )}
             </div>
           </div>
         );
