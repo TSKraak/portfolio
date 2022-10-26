@@ -59,8 +59,9 @@ export default function ProjectForm() {
       <div className="ProjectFormContainer">
         <form className="ProjectForm">
           <div className="FieldContainer">
-            <label>Project</label>
+            <label>Project *</label>
             <input
+              required
               type="text"
               id="project"
               value={projectData.project}
@@ -103,8 +104,9 @@ export default function ProjectForm() {
           )}
 
           <div className="FieldContainer">
-            <label>Company</label>
+            <label>Company *</label>
             <input
+              required
               type="text"
               id="company"
               value={projectData.company}
@@ -117,8 +119,9 @@ export default function ProjectForm() {
             />
           </div>
           <div className="FieldContainer">
-            <label>Description</label>
+            <label>Description *</label>
             <textarea
+              required
               rows="5"
               type="text"
               id="description"

@@ -10,7 +10,7 @@ export default function ExperienceForm() {
     logo: "",
     company: "",
     period: "",
-    description: "",
+    description: ""
   });
   const [postSuccess, setPostSuccess] = useState(false);
 
@@ -30,10 +30,10 @@ export default function ExperienceForm() {
           logo: experienceData.logo,
           company: experienceData.company,
           period: experienceData.period,
-          description: experienceData.description,
+          description: experienceData.description
         },
         {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: { Authorization: `Bearer ${token}` }
         }
       );
       setExperienceData({
@@ -41,7 +41,7 @@ export default function ExperienceForm() {
         logo: "",
         company: "",
         period: "",
-        description: "",
+        description: ""
       });
       setPostSuccess(true);
     } catch (error) {
@@ -59,15 +59,16 @@ export default function ExperienceForm() {
       <div className="ExperienceFormContainer">
         <form className="ExperienceForm">
           <div className="FieldContainer">
-            <label>Title</label>
+            <label>Title *</label>
             <input
+              required
               type="text"
               id="title"
               value={experienceData.title}
               onChange={(event) =>
                 setExperienceData({
                   ...experienceData,
-                  title: event.target.value,
+                  title: event.target.value
                 })
               }
             />
@@ -81,7 +82,7 @@ export default function ExperienceForm() {
               onChange={(event) =>
                 setExperienceData({
                   ...experienceData,
-                  logo: event.target.value,
+                  logo: event.target.value
                 })
               }
             />
@@ -103,15 +104,16 @@ export default function ExperienceForm() {
           )}
 
           <div className="FieldContainer">
-            <label>Company</label>
+            <label>Company *</label>
             <input
+              required
               type="text"
               id="company"
               value={experienceData.company}
               onChange={(event) =>
                 setExperienceData({
                   ...experienceData,
-                  company: event.target.value,
+                  company: event.target.value
                 })
               }
             />
@@ -125,14 +127,15 @@ export default function ExperienceForm() {
               onChange={(event) =>
                 setExperienceData({
                   ...experienceData,
-                  period: event.target.value,
+                  period: event.target.value
                 })
               }
             />
           </div>
           <div className="FieldContainer">
-            <label>Description</label>
+            <label>Description *</label>
             <textarea
+              required
               rows="5"
               type="text"
               id="description"
@@ -140,7 +143,7 @@ export default function ExperienceForm() {
               onChange={(event) =>
                 setExperienceData({
                   ...experienceData,
-                  description: event.target.value,
+                  description: event.target.value
                 })
               }
             />
