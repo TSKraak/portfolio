@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import Loading from "./components/Loading";
 import AdminPage from "./pages/AdminPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
@@ -14,6 +15,7 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [about, setAbout] = useState([]);
   const [validToken, setValidToken] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -30,6 +32,7 @@ function App() {
           // token is still valid, set user with token
           setUser({ token, ...response.data });
           setValidToken(true);
+          setIsLoading(false);
         } catch (error) {
           if (error.response) {
             console.log("ERROR:", error.response.message);
@@ -55,6 +58,7 @@ function App() {
         validToken={validToken}
         setValidToken={setValidToken}
       />
+      {isLoading && <Loading />}
       <div className="App-Content">
         <Routes>
           <Route
@@ -68,6 +72,7 @@ function App() {
                 setExperiences={setExperiences}
                 projects={projects}
                 setProjects={setProjects}
+                setIsLoading={setIsLoading}
               />
             }
           />

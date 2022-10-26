@@ -11,6 +11,7 @@ export default function HomePage({
   setExperiences,
   projects,
   setProjects,
+  setIsLoading
 }) {
   useEffect(() => {
     const fetchData = async () => {
@@ -22,12 +23,14 @@ export default function HomePage({
         setAbout(aboutResponse.data);
         setExperiences(expResponse.data);
         setProjects(projResponse.data);
+        setIsLoading(false);
       } catch (error) {
         console.log("Something went wrong:", error);
+        setIsLoading(false);
       }
     };
     fetchData();
-  }, [setAbout, setExperiences, setProjects]);
+  }, [setAbout, setExperiences, setProjects, setIsLoading]);
 
   return (
     <div className="HomePageContainer">
