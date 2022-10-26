@@ -24,11 +24,12 @@ function App() {
           // if we do have a token,
           // check wether it is still valid or if it is expired
           const response = await axios.get(`${apiUrl}/me`, {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${token}` }
           });
 
           // token is still valid, set user with token
           setUser({ token, ...response.data });
+          setValidToken(true);
         } catch (error) {
           if (error.response) {
             console.log("ERROR:", error.response.message);

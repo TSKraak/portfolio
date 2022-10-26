@@ -1,5 +1,5 @@
-.ExperienceFormContainer {
-  .ExperienceForm {
+.ProjectFormContainer {
+  .ProjectForm {
     display: flex;
     flex-direction: column;
 
@@ -21,11 +21,11 @@
     }
   }
 
-  .SubmitExperienceButton {
+  .SubmitProjectButton {
     margin-left: 15%;
   }
 
-  .SubmitExperienceSucces {
+  .SubmitProjectSucces {
     text-align: center;
     margin-top: 2rem;
     color: var(--accent-color2);
