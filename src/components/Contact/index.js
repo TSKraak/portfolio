@@ -21,13 +21,13 @@ export default function Contact() {
         </a>
       </p>
       <p>
-        <a href="https://github.com/TSKraak">
+        <a href="https://github.com/TSKraak" target="_blank" rel="noreferrer">
           <img src={github} alt="github" />
           TSKraak
         </a>
       </p>
       <p>
-        <a href="https://www.linkedin.com/in/thomaskraak87/">
+        <a href="https://www.linkedin.com/in/thomaskraak87/" target="_blank" rel="noreferrer">
           <img src={linkedin} alt="linkedin" />
           thomaskraak87
         </a>

@@ -13,11 +13,9 @@ export default function Experiences({ data }) {
                 <h3 className="ExpCompany">{dat.company}</h3>
                 <p className="ExpPeriod">{dat.period}</p>
               </div>
-              <p className="ExpDescription">{dat.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: dat.description }} className="ExpDescription"></p>
             </div>
-            {dat.logo && (
-              <img className="ExpLogo" src={dat.logo} alt={dat.company} />
-            )}
+            {dat.logo && <img className="ExpLogo" src={dat.logo} alt={dat.company} />}
           </div>
         );
       })}
